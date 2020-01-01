@@ -1,10 +1,10 @@
-//try try try try
+//updated missions 
 /**
  * FibonacciHeap
  *
  * An implementation of fibonacci heap over integers.
  */
-public class FibonacciHeap
+public class FibonacciHeap // iris- min cuts and link fields and constractor
 {
 //
 
@@ -17,7 +17,7 @@ public class FibonacciHeap
     * is empty.
     *   
     */
-    public boolean isEmpty()
+    public boolean isEmpty() //iris
     {
     	return false; // should be replaced by student code
     }
@@ -27,7 +27,7 @@ public class FibonacciHeap
     *
     * Creates a node (of type HeapNode) which contains the given key, and inserts it into the heap. 
     */
-    public HeapNode insert(int key)
+    public HeapNode insert(int key) //almog
     {    
     	return new HeapNode(key); // should be replaced by student code
     }
@@ -38,7 +38,7 @@ public class FibonacciHeap
     * Delete the node containing the minimum key.
     *
     */
-    public void deleteMin()
+    public void deleteMin() //iris
     {
      	return; // should be replaced by student code
      	
@@ -50,7 +50,7 @@ public class FibonacciHeap
     * Return the node of the heap whose key is minimal. 
     *
     */
-    public HeapNode findMin()
+    public HeapNode findMin() // iris
     {
     	return new HeapNode(0);// should be replaced by student code
     } 
@@ -61,7 +61,7 @@ public class FibonacciHeap
     * Meld the heap with heap2
     *
     */
-    public void meld (FibonacciHeap heap2)
+    public void meld (FibonacciHeap heap2) //almog
     {
     	  return; // should be replaced by student code   		
     }
@@ -72,7 +72,7 @@ public class FibonacciHeap
     * Return the number of elements in the heap
     *   
     */
-    public int size()
+    public int size() //iris
     {
     	return 0; // should be replaced by student code
     }
@@ -83,7 +83,7 @@ public class FibonacciHeap
     * Return a counters array, where the value of the i-th entry is the number of trees of order i in the heap. 
     * 
     */
-    public int[] countersRep()
+    public int[] countersRep() //almog
     {
 	int[] arr = new int[42];
         return arr; //	 to be replaced by student code
@@ -167,7 +167,7 @@ public class FibonacciHeap
     * another file 
     *  
     */
-    public class HeapNode{
+    public class HeapNode{ //almog- constractor and sadot
 
 	public int key;
 
