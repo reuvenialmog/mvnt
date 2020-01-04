@@ -6,6 +6,20 @@
  */
 public class FibonacciHeap // iris- min cuts and link fields and constractor
 {
+	private HeapNode min;
+	private int size;
+	public static totalNumOfCuts = 0;
+	public static totalNumOfLinks = 0;
+	
+	public FibonacciHeap() {
+		this.min = null;
+		this.size = 0;
+	}
+	
+	public FibonacciHeap(HeapNode node) {
+		this.min = node;
+		this.size = 1;
+	}
 
 	/**
 	 * public boolean isEmpty()
@@ -17,7 +31,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 */
 	public boolean isEmpty() // iris
 	{
-		return false; // should be replaced by student code
+		return (min == null); 
 	}
 
 	/**
@@ -39,6 +53,19 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 */
 	public void deleteMin() // iris
 	{
+		HeapNode newRoot = this.min.getChild();
+		newRoot.setParent(null);
+		newRoot.setPrev(this.min.getPrev());
+		this.min.getPrev().setNext(newRoot);
+		newRoot.setNext(this.min.getNext());
+		this.min.getNext().setPrev(newRoot);
+		HeapNode tempRoot = newRoot.getNext();
+		HeapNode[] bucketArray = new Array[Math.log10(this.size)/Math.log10(2)];
+		while(tempRoot != newRoot) {
+			if(bucketArray[tempRoot.getRank()] != null) {
+				
+			}
+		}
 		return; // should be replaced by student code
 
 	}
@@ -51,7 +78,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 */
 	public HeapNode findMin() // iris
 	{
-		return new HeapNode(0);// should be replaced by student code
+		return this.min;// should be replaced by student code
 	}
 
 	/**
@@ -78,7 +105,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 */
 	public int size() // iris
 	{
-		return 0; // should be replaced by student code
+		return this.size; // should be replaced by student code
 	}
 
 	/**
@@ -136,7 +163,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 * smaller value in its root.
 	 */
 	public static int totalLinks() {
-		return 0; // should be replaced by student code
+		return totalNumOfLinks; // should be replaced by student code
 	}
 
 	/**
@@ -147,7 +174,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 * diconnects a subtree from its parent (during decreaseKey/delete methods).
 	 */
 	public static int totalCuts() {
-		return 0; // should be replaced by student code
+		return totalNumOfCuts; // should be replaced by student code
 	}
 
 	/**
@@ -192,25 +219,55 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 		public int getRank() {
 			return this.rank;
 		}
+		
+		//added by Iris
+		public void setRank(int rank) {
+			this.rank = rank;
+		}
 
 		public boolean isMark() {
 			return this.mark;
+		}
+		
+		//added by Iris
+		public void markNode() {
+			this.mark = true;
 		}
 
 		public HeapNode getChild() {
 			return this.child;
 		}
+		
+		//added by Iris
+		public void setChild(HeapNode node) {
+			this.child = node;
+		}
 
 		public HeapNode getNext() {
 			return this.next;
+		}
+		
+		//added by Iris
+		public void setNext(HeapNode node) {
+			this.next = node;
 		}
 
 		public HeapNode getPrev() {
 			return this.prev;
 		}
+		
+		//added by Iris
+		public void setPrev(HeapNode node) {
+			this.prev = node;
+		}
 
 		public HeapNode getParent() {
 			return this.parent;
+		}
+		
+		//added by Iris
+		public void setParent(HeapNode node) {
+			this.parent = node;
 		}
 		// end of almog's getters additions
 	}
