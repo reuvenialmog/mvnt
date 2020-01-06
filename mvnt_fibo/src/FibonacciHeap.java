@@ -6,7 +6,7 @@
  */
 public class FibonacciHeap // iris- min cuts and link fields and constractor
 {
-	private HeapNode min;
+	private  HeapNode min;
 	private HeapNode start;
 	private int size;
 	public static int totalNumOfCuts = 0;
