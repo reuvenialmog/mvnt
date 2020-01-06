@@ -7,17 +7,21 @@
 public class FibonacciHeap // iris- min cuts and link fields and constractor
 {
 	private HeapNode min;
+	private HeapNode start;
 	private int size;
-	public static totalNumOfCuts = 0;
-	public static totalNumOfLinks = 0;
+	public static int totalNumOfCuts = 0;
+	public static int totalNumOfLinks = 0;
+	
 	
 	public FibonacciHeap() {
 		this.min = null;
+		this.start=null;
 		this.size = 0;
 	}
 	
 	public FibonacciHeap(HeapNode node) {
 		this.min = node;
+		this.start=min;
 		this.size = 1;
 	}
 
@@ -40,7 +44,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 * Creates a node (of type HeapNode) which contains the given key, and inserts
 	 * it into the heap.
 	 */
-	public HeapNode insert(int key) // we CANT use MELD! (forum)
+	public HeapNode insert(int key) // almog. we CANT use MELD! (forum)
 	{
 		return new HeapNode(key); // should be replaced by student code
 	}
@@ -127,7 +131,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 * Deletes the node x from the heap.
 	 *
 	 */
-	public void delete(HeapNode x) {
+	public void delete(HeapNode x) { //iris
 		return; // should be replaced by student code
 	}
 
@@ -138,7 +142,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 * heap should be updated to reflect this chage (for example, the cascading cuts
 	 * procedure should be applied if needed).
 	 */
-	public void decreaseKey(HeapNode x, int delta) {
+	public void decreaseKey(HeapNode x, int delta) { //almog
 		return; // should be replaced by student code
 	}
 
@@ -149,7 +153,7 @@ public class FibonacciHeap // iris- min cuts and link fields and constractor
 	 * = #trees + 2*#marked The potential equals to the number of trees in the heap
 	 * plus twice the number of marked nodes in the heap.
 	 */
-	public int potential() {
+	public int potential() { //iris
 		return 0; // should be replaced by student code
 	}
 
